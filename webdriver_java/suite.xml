@@ -1,9 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="MyTestSuiteBySPP">
 
-    <test name="Dropdown">
+    <test name="initialTests">
         <classes>
             <class name="dropdown.DropdownTests"></class>
+            <class name="alerts.AlertTests"></class>
+            <class name="frames.FrameTests"></class>
+
         </classes>
     </test>
 </suite>
