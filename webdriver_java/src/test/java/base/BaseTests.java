@@ -1,6 +1,7 @@
 package base;
 
 import com.google.common.io.Files;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,14 +18,12 @@ import java.io.IOException;
 
 public class BaseTests {
 
-    private EventFiringWebDriver driver;
+    private WebDriver driver;
     protected HomePage homePage;
 
     @BeforeClass
     public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
-        driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
-        driver.register(new EventReporter());
+        driver = WebDriverManager.chromedriver().create();
     }
 
     @BeforeMethod

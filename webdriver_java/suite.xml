@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MyTestSuiteBySPP">
+
+    <test name="Dropdown">
+        <classes>
+            <class name="dropdown.DropdownTests"></class>
+        </classes>
+    </test>
+</suite>
