@@ -18,6 +18,7 @@ public class WysiwygEditorPage {
         switchToEditArea();
         driver.findElement(textArea).clear();
         switchToMainArea();
+        driver.findElement(textArea).getText();
     }
 
     public void setTextArea(String text){
