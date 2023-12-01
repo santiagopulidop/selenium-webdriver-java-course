@@ -26,23 +26,11 @@ public class BaseTests {
 
         //driver = WebDriverManager.chromedriver().create();
 
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("start-maximized");
-        options.addArguments("disable-infobars");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-
-        options.setCapability("goog:chromeOptions", Map.of("w3c", false));
-        options.setCapability("chromeOptions", Map.of("w3c", false));
-
-        options.setCapability(ChromeOptions.CAPABILITY, options);
+        options.addArguments("headless");
+        options.addArguments("disable-gpu");
         driver = new ChromeDriver(options);
-
-
     }
 
     @BeforeMethod
