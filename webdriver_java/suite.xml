@@ -5,7 +5,7 @@
         <classes>
             <class name="dropdown.DropdownTests"></class>
             <class name="alerts.AlertTests"></class>
-            <class name="frames.FrameTests"></class>
+            <class name="login.LoginTests"></class>
 
         </classes>
     </test>

@@ -2,15 +2,14 @@ package base;
 
 import com.google.common.io.Files;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.HomePage;
 import utils.CookieManager;
-import utils.EventReporter;
 import utils.WindowManager;
 
 import java.io.File;
@@ -23,7 +22,15 @@ public class BaseTests {
 
     @BeforeClass
     public void setUp(){
-        driver = WebDriverManager.chromedriver().create();
+
+        //driver = WebDriverManager.chromedriver().create();
+
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
+
+
     }
 
     @BeforeMethod
